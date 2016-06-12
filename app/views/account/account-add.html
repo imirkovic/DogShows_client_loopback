@@ -1,0 +1,27 @@
+
+<div id="accountFormModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Apply on competition</h4>
+            </div>
+            <div class="modal-body" ng-if="showForm">
+
+                <!-- FORMA -->
+                <form class="form-horizontal" role="form" ng-submit="addAccount()">
+                    <div ng-include="'views/account/account-form.html'"></div>
+                </form>
+
+            </div>
+            
+            
+            <div class="alert alert-success" ng-if="!showForm" role="alert">Great Job, you are applied on competition</div>
+
+        </div>
+    </div>
+</div>
+
+
+

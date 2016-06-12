@@ -1,0 +1,23 @@
+
+<div id="applicationFormModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Application</h4>
+            </div>
+            <div class="modal-body">
+
+                <!-- FORMA -->
+                <form class="form-horizontal" role="form" ng-submit="addApplication()">
+                    <div ng-include="'views/application/application-form.html'"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

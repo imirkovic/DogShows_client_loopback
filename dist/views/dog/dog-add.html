@@ -1,0 +1,23 @@
+<!-- RESERVE TABLE MODAL -->
+<div id="dogFormModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Dog</h4>
+            </div>
+            <div class="modal-body">
+
+                <!-- FORMA -->
+                <form class="form-horizontal" role="form" ng-submit="addDog()">
+                    <div ng-include="'views/dog/dog-form.html'"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

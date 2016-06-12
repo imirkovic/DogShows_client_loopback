@@ -1,0 +1,41 @@
+<div class="form-group">
+    <label for="whisker" class="col-sm-2 control-label">Whisker  </label>
+    <div class="col-sm-10">        
+        <div class="radio" data-ng-repeat="act in activeCompetitions" > 
+            <label> 
+                 <img ng-src={{act.image}} class="img-responsive img-thumbnail" alt="A"> <br>
+                <input
+                    name="activeCompetitions"
+                    type="radio"
+                    value="{{act.name}}"
+                    ng-model="dog.application" />
+                    {{act.name}}  
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="whisker" class="col-sm-2 control-label">Class  </label>
+    <div class="col-sm-10">        
+        <div class="radio" data-ng-repeat="act in class" > 
+            <label> 
+                <input
+                    name="whisker"
+                    type="radio"
+                    value="{{act.name}}"
+                    ng-model="application.class" />
+                    {{act.name}}  
+            </label>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="cancel" class="btn btn-default" data-dismiss="modal" value="Cancel"/>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>
+

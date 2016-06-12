@@ -1,0 +1,22 @@
+<!-- RESERVE TABLE MODAL -->
+<div id="editAccountFormModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Account</h4>
+            </div>
+            <div class="modal-body">
+
+                <!-- FORMA -->
+                <form class="form-horizontal" role="form" ng-submit="updateAccount()">
+                    <div ng-include="'views/account/account-form.html'"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

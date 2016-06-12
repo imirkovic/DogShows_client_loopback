@@ -1,0 +1,101 @@
+<div class="container" ng-controller="CompetitionDetailController">
+        <div ng-include="'views/account/account-add.html'"></div>
+    
+    <div class="row row-content">
+        <div class="col-xs-12" ng-if="!showCompetition">
+            <h3>{{message}}</h3>
+        </div>
+        <div class="col-xs-12" ng-if="showCompetition">
+            <div class="row row-content">
+                <div class="col-xs-12">
+                    <button class="btn btn-xs btn-primary pull-right"
+                            type="button" ui-sref="app.competitions">
+                        Back to Competitions
+                    </button>
+                    <div class="media">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object img-thumbnail"
+                                     ng-src={{competition.image}} alt="Uthappizza">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading">{{competition.name}}
+                                <span class="label label-danger">{{competition.label}}</span>
+                                <span class="badge">{{competition.price | currency}}</span></h2>
+                            <p>{{competition.description}}</p>
+                            
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#accountFormModal" ng-click="celarAccount()">Apply on competition</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-content">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" ng-class="{active:isSelected(1)}">
+                        <a ng-click="select(1)" aria-controls="all menu" role="tab">Judges</a>
+                    </li>
+                    <li role="presentation" ng-class="{active:isSelected(2)}">
+                        <a ng-click="select(2)" aria-controls="appetizers" role="tab">Competition prediction</a>
+                    </li>
+                    <li role="presentation" ng-class="{active:isSelected(3)}">
+                        <a ng-click="select(3)" aria-controls="mains" role="tab"> Applications   </a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" ng-if="showJudges">
+                        <h2> Judges on competition </h2>
+                        
+                        <ul class="media-list">
+                            <li class="media" ng-repeat="judge in judges">
+                                <div class="media-left media-middle"> 
+                                        <img class="media-object img-thumbnail" width="115" height="115"
+                                             ng-src={{judge.picture}} alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">{{judge.name}}
+                                        <span class="label label-danger">{{judge.label}}</span> </h3>
+                                    <p>{{judge.description}}...</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="tab-pane fade in active" ng-if="showStatistic">
+                         <h2> Competition prediction</h2>
+                      
+                            <canvas id="pie" class="chart chart-pie"
+                              chart-data="data" chart-labels="labels" chart-legend="true">
+                            </canvas> 
+
+                    </div>
+                    <div class="tab-pane fade in active" ng-if="showApplications">
+                        <h2> People applied </h2>
+                            <ul class="media-list">
+                            <li class="media" ng-repeat="account in accounts">
+                                <div class="media-left media-middle"> 
+                                        <img class="media-object img-thumbnail" width="115" height="115"
+                                             src="images/default_avatar.png" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h3 class="media-heading">{{account.ownerName}}
+                                        <span class="label label-danger">{{account.dogName}}</span> 
+                                    </h3>
+                                    <p>{{account.city}}  {{account.country}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

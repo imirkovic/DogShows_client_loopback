@@ -1,0 +1,100 @@
+
+    <div class="container" ng-controller="LeaderController">
+
+
+        <div class="row">
+            <div class="col-xs-12">
+               <h3>About Us</h3>
+               <hr>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-8">
+                <h2>Our History</h2>
+                <p>4 RIVERS WINNER is a Double International Dog Shows handled in the city of Karlovac, in Croatia, during 24th and 25th of September. 
+                    The CACIB Karlovac  event is organized by the Kinološki Klub Karlovac and this is in its 5th edition.  </p>
+                <p>Karlovac is a beautiful city which lays on 4 rivers, and that is why the event got this name, its also only 40 km from Zagre, the capital oft he country.</p>
+               
+                <div class="well">
+                    <blockquote>
+                        <p>Best dog Show in a beautiful city.</p>
+                        <footer>Yogi Berra,  
+                        <cite title="Source Title">Dogs Shows Yogi Berra, P. Pepe, Diversion Books, 2014</cite></footer>
+                    </blockquote>                
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Facts At a Glance</h3>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Started</dt>
+                            <dd>3 Feb. 2013</dd>
+                            <dt>Dog Show organized</dt>
+                            <dd>13</dd>
+                            <dt>Titles won</dt>
+                            <dd>40</dd>
+                       </dl>
+                    </div>
+                </div>
+            </div>
+  
+            <div class="col-xs-12 col-sm-12">
+                <div class="col-xs-12" ng-if="!showLeaders">
+                    <h3>{{message}}</h3>
+                </div>
+                <div class="col-xs-12" ng-if="showLeaders">
+                    <h2>Leadership  
+                    </h2>
+
+                    <ul class="media-list" ng-repeat="leader in leaders">
+                        <div class="media-left media-middle">
+                            <img class="media-object img-thumbnail" width="115" height="115" ng-src={{leader.image}} alt="Leader image">
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading">{{leader.name}} <small>{{leader.designation}}</small> </h2>
+                            <p>{{leader.description}}</p>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+         
+        </div>
+        
+         <div class="row row-content">
+           <div class="col-xs-12">
+              <h3>Location Information</h3> 
+           </div>
+            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+                   <h5>Our Address</h5>
+                    <address style="font-size: 100%">
+		              121, Brooklyn<br>
+		              New York<br>
+		              <i class="fa fa-phone"></i>: +852 1234 5678<br>
+		              <i class="fa fa-fax"></i>: +852 8765 4321<br>
+		              <i class="fa fa-envelope"></i>: 
+                        <a href="mailto:dogshow@nesto.net">dogshow@nesto.net</a>
+		           </address>
+                   
+               <div class="col-xs-12 col-sm-11 col-sm-offset-1">
+                <div class="btn-group" role="group" aria-label="...">
+                    <a type="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+                    <a type="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
+                    <a type="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+                <h5>Map of our Location</h5>
+                <img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&amp;zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:S%7C40.702147,-74.015794&amp;markers=color:green%7Clabel:G%7C40.711614,-74.012318&amp;markers=color:red%7Clabel:C%7C40.718217,-73.998284" alt="Points of Interest in Lower Manhattan">
+            </div>
+
+        </div>
+        
+    </div>
+

@@ -1,0 +1,128 @@
+<div class="form-group" ng-class="{ 'has-error' : accountForm.name.$error.required && !accountForm.name.$pristine }">
+    <label for="name" class="col-sm-2 control-label"> Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name of dog"
+               ng-model="dog.name" required>
+        <span ng-show="accountForm.name.$error.required && !accountForm.name.$pristine" class="help-block">Name is required.</span>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="pedigree_number" class="col-sm-2 control-label"> Pedigree Number</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="pedigree_number" name="pedigree_number" 
+                placeholder="Enter pedigree number of dog" ng-model="dog.pedigree_number" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="date_of_birth" class="col-sm-2 control-label"> Birth Date</label>
+    <div class="col-sm-10">
+        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" 
+                placeholder="Enter birth date of dog" ng-model="dog.date_of_birth" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="color" class="col-sm-2 control-label"> Color </label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="color" name="color" 
+                placeholder="Enter color of dog" ng-model="dog.color" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="breed" class="col-sm-2 control-label">Breed</label>
+    <div class="col-sm-10">        
+        <select ng-model="dog.breed" id="breed" name="breed" class="form-control" ng-options="x.name for x in breed">
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="whisker" class="col-sm-2 control-label">Whisker  </label>
+    <div class="col-sm-10">        
+        <div class="radio" data-ng-repeat="act in whisker" > 
+            <label> 
+                <input
+                    name="whisker"
+                    type="radio"
+                    value="{{act.name}}"
+                    ng-model="dog.whisker" />
+                    {{act.name}}  
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="sex" class="col-sm-2 control-label">Sex  </label>
+    <div class="col-sm-10 "> 
+        <div class="radio" data-ng-repeat="act in sex" > 
+            <label> 
+                <input
+                    name="sex"
+                    type="radio"
+                    value="{{act.name}}"
+                    ng-model="dog.sex" />
+                    {{act.name}}  
+            </label>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label for="size" class="col-sm-2 control-label">Size  </label>
+    <div class="col-sm-10">        
+        <select ng-model="dog.size" id="size" name="size" class="form-control" ng-options="x.name for x in size">
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="father_name" class="col-sm-2 control-label"> Father name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="father_name" name="father_name" 
+                placeholder="Enter father name of dog" ng-model="dog.father_name" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="mother_name" class="col-sm-2 control-label"> Mother name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="mother_name" name="mother_name" 
+                placeholder="Enter mother_name of dog" ng-model="dog.mother_name" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="breeder" class="col-sm-2 control-label"> Breeder</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" id="breeder" name="breeder" 
+                placeholder="Enter breeder of dog" ng-model="dog.breeder" required>
+    </div>
+</div>
+
+
+
+<!-- File Button --> 
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="filebutton">File Button</label>
+  <div class="col-sm-10">
+    <input id="filebutton" name="filebutton" class="input-file" type="file">
+  </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="cancel" class="btn btn-default" data-dismiss="modal" value="Cancel"/>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>
+
+
+
+
